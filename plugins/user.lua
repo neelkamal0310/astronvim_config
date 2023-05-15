@@ -9,4 +9,20 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    'folke/tokyonight.nvim',
+    config = function()
+      require("tokyonight").setup({
+        style = "night",
+        on_highlights = function(hl, c)
+          hl.LineNr = {
+            fg = c.dark5,
+          }
+          hl.CursorLineNr = {
+            fg = c.fg,
+          }
+        end
+      })
+    end,
+  }
 }

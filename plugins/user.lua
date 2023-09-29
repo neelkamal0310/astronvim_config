@@ -21,6 +21,9 @@ return {
           hl.CursorLineNr = {
             fg = c.fg,
           }
+          hl.DiagnosticUnnecessary = {
+            fg = c.fg,
+          }
         end
       })
     end,

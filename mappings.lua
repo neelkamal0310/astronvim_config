@@ -8,6 +8,8 @@ return {
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
+    ["<leader>lf"] = { "! black %<cr>l", desc = "Format file (python)" },
+
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
@@ -20,9 +22,14 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    --
+    ["<C-t>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+    ["<leader>r"] = { ":e<cr>", desc = "Refresh File" },
   },
   t = {
     -- setting a mapping to false will disable it
     ["<esc>"] = false,
+    ["<C-l>"] = false,
+    ["<C-t>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
   },
 }

@@ -1,4 +1,8 @@
 vim.opt.clipboard = "unnamed"
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args) require("conform").format { bufnr = args.buf, async = true } end,
+})
 
 -- set vim options here (vim.<first_key>.<second_key> = value)
 return {

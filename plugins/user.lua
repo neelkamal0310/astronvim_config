@@ -10,9 +10,9 @@ return {
   --   end,
   -- },
   {
-    'folke/tokyonight.nvim',
+    "folke/tokyonight.nvim",
     config = function()
-      require("tokyonight").setup({
+      require("tokyonight").setup {
         style = "night",
         on_highlights = function(hl, c)
           hl.LineNr = {
@@ -24,8 +24,20 @@ return {
           hl.DiagnosticUnnecessary = {
             fg = c.fg,
           }
-        end
-      })
+        end,
+      }
     end,
-  }
+  },
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      require("conform").setup {
+        formatters_by_ft = {
+          lua = { "stylua" },
+          -- python = { "ruff_fix", "isort" },
+          rust = { "rustfmt" },
+        },
+      }
+    end,
+  },
 }
